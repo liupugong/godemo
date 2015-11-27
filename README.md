@@ -1,7 +1,7 @@
 # godemo
 An few demo written in golang to learn golang programming.
 
-Reference:
+### Reference:
 
 1. golang doc: https://golang.org/doc/
 
@@ -12,12 +12,19 @@ Reference:
 4. MySQL Driver: https://github.com/go-sql-driver/mysql
 
 5. WebSocket for GO: 
-	https://github.com/golang/net (official)
 
+	https://github.com/golang/net ####(official)
 	https://github.com/joewalnes/websocketd
-	
 	https://github.com/gorilla/websocket
 
 6. Protobuf: https://github.com/golang/protobuf
 
 7. Crypto: https://github.com/golang/crypto
+
+8. GOLang ORM: 
+
+    <a href="https://github.com/jinzhu/gorm">gorm</a>go get -u github.com/jinzhu/gorm
+    <a href="https://github.com/astaxie/beego">beego orm</a> go get github.com/astaxie/beego/orm
+
+
+
