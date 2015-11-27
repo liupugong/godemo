@@ -20,10 +20,10 @@ func main() {
 	// Disable table name's pluralization
 	db.SingularTable(true)
 
-	result := merchant{id: -1, merchant_name: "none"}
+	var result merchant
 	fmt.Println("--------------- struct / orm ---------------")
 	// db.Debug().Last(&result)
-	query := db.Debug().First(&result)
+	query := db.First(&result)
 	if query.Error != nil {
 		fmt.Print(query.Error)
 		fmt.Println("")
@@ -32,6 +32,19 @@ func main() {
 
 	fmt.Println("id: ", result.id)
 	fmt.Println("merchant_name: ", result.merchant_name)
+	fmt.Println("merchant: ", result)
+
+	var merchants []merchant
+	query = db.Find(&merchants)
+	fmt.Println("records", len(merchants))
+
+	for i, mer := range merchants {
+		fmt.Println("i = ", i)
+		fmt.Println("id: ", mer.id)
+		fmt.Println("merchant_name: ", mer.merchant_name)
+		fmt.Println("merchant: ", mer)
+	}
+
 	fmt.Println("--------------- end of struct / orm ---------------")
 
 	fmt.Println("")
@@ -64,12 +77,12 @@ func main() {
 }
 
 type merchant struct {
-	id                     int64 `gorm:"primary_key"`
+	id                     int64
 	merchant_name          string
 	auth_key               string
 	secret_key             string
 	permit_payment_methods string
 	is_valid               bool
-	create_at              time.Time
-	update_at              time.Time
+	created_at             time.Time
+	updated_at             time.Time
 }
