@@ -4,14 +4,16 @@ import "fmt"
 import "database/sql"
 import _ "github.com/go-sql-driver/mysql"
 
+const sqlstring = ""
+
 func main() {
-	db, err := sql.Open("mysql", "eleme:eleMe@tcp(172.16.10.24:3306)/payment")
+	db, err := sql.Open("mysql", "root:Password@1@tcp(127.0.0.1:3306)/sakila")
 	if nil != err {
 		fmt.Print(err)
 	}
 	defer db.Close()
 
-	rows, err := db.Query("select * from merchant limit 10")
+	rows, err := db.Query("select * from city limit 10")
 	if err != nil {
 		fmt.Print(err)
 	}
