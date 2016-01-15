@@ -1,9 +1,9 @@
 package main
 
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/liupugong/godemo/stringutil"
+	"github.com/liupugong/godemo/stringutil"
 )
 
 func demo() {
@@ -11,9 +11,6 @@ func demo() {
 }
 
 func main() {
-    fmt.Printf(stringutil.Reverse("!oG ,olleH"))
-    fmt.Printf("\n")
+	fmt.Printf(stringutil.Reverse("!oG ,olleH"))
+	fmt.Printf("\n")
 }
-
-
-
